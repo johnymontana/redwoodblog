@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "^0.3.2"
+    "@redwoodjs/api": "^0.3.2",
+    "neo4j-graphql-js": "^2.13.0"
   }
 }

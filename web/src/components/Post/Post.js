@@ -2,8 +2,8 @@ import { useMutation } from '@redwoodjs/web'
 import { Link, routes, navigate } from '@redwoodjs/router'
 
 const DELETE_POST_MUTATION = gql`
-  mutation DeletePostMutation($id: Int!) {
-    deletePost(id: $id) {
+  mutation DeletePostMutation($id: ID!) {
+    DeletePost(id: $id) {
       id
     }
   }
@@ -44,10 +44,11 @@ const Post = ({ post }) => {
               <td className="p-3">{post.body}</td>
             </tr>
             <tr className="odd:bg-gray-100 even:bg-white border-t">
-              <td className="font-semibold p-3 text-right md:w-1/5">createdAt</td>
+              <td className="font-semibold p-3 text-right md:w-1/5">
+                createdAt
+              </td>
               <td className="p-3">{post.createdAt}</td>
             </tr>
-            
           </tbody>
         </table>
       </div>

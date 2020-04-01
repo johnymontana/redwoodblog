@@ -3,8 +3,8 @@ import { navigate, routes } from '@redwoodjs/router'
 import PostForm from 'src/components/PostForm'
 
 const CREATE_POST_MUTATION = gql`
-  mutation CreatePostMutation($input: PostInput!) {
-    createPost(input: $input) {
+  mutation CreatePostMutation($title: String!, $body: String!) {
+    CreatePost(title: $title, body: $body) {
       id
     }
   }
@@ -18,7 +18,7 @@ const NewPost = () => {
   })
 
   const onSave = (input) => {
-    createPost({ variables: { input } })
+    createPost({ variables: { title: input.title, body: input.body } })
   }
 
   return (

@@ -1,12 +1,11 @@
 import BlogPost from 'src/components/BlogPost'
 
 export const QUERY = gql`
-  query($id: Int!) {
-    post(id: $id) {
+  query($id: ID!) {
+    post: Post(id: $id) {
       id
       title
       body
-      createdAt
     }
   }
 `
@@ -18,5 +17,5 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ post }) => {
-  return <BlogPost post={post} />
+  return <BlogPost post={post[0]} />
 }

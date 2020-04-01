@@ -9,7 +9,6 @@ const BlogPost = ({ post }) => {
         </h2>
       </header>
       <div>{post.body}</div>
-      <div>Created at {post.createdAt}</div>
     </article>
   )
 }

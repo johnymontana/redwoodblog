@@ -11,8 +11,12 @@ import { useMutation } from '@redwoodjs/web'
 import { useForm } from 'react-hook-form'
 
 const CREATE_CONTACT = gql`
-  mutation CreateContactMutation($input: ContactInput!) {
-    createContact(input: $input) {
+  mutation CreateContactMutation(
+    $name: String!
+    $email: String!
+    $message: String!
+  ) {
+    CreateContact(name: $name, email: $email, message: $message) {
       id
     }
   }
@@ -26,7 +30,9 @@ const ContactPage = (props) => {
     },
   })
   const onSubmit = (data) => {
-    create({ variables: { input: data } })
+    create({
+      variables: { name: data.name, email: data.email, message: data.message },
+    })
     console.log(data)
   }
 

@@ -1,23 +1,9 @@
-export const schema = gql`
+export const schema = `
   type Contact {
-    id: Int!
+    id: ID!
     name: String!
     email: String!
     message: String!
-    createdAt: DateTime!
-  }
-
-  type Query {
-    contacts: [Contact]
-  }
-
-  input ContactInput {
-    name: String
-    email: String
-    message: String
-  }
-
-  type Mutation {
-    createContact(input: ContactInput!): Contact
+    createdAt: DateTime
   }
 `

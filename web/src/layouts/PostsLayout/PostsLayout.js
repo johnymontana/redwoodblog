@@ -5,6 +5,14 @@ const PostsLayout = (props) => {
     <div className="rw-scaffold">
       <div className="bg-white font-sans">
         <header className="flex justify-between py-4 px-8">
+          <h2 className="text-xl font-semibold">
+            <Link
+              to={routes.home()}
+              className="text-gray-700 hover:text-gray-900 hover:underline"
+            >
+              Home
+            </Link>
+          </h2>
           <h1 className="text-xl font-semibold">
             <Link
               to={routes.posts()}

@@ -3,18 +3,17 @@ import { navigate, routes } from '@redwoodjs/router'
 import PostForm from 'src/components/PostForm'
 
 export const QUERY = gql`
-  query FIND_POST_BY_ID($id: Int!) {
-    post: post(id: $id) {
+  query FIND_POST_BY_ID($id: ID!) {
+    post: Post(id: $id) {
       id
       title
       body
-      createdAt
     }
   }
 `
 const UPDATE_POST_MUTATION = gql`
-  mutation UpdatePostMutation($id: Int!, $input: PostInput!) {
-    updatePost(id: $id, input: $input) {
+  mutation UpdatePostMutation($id: ID!, $title: String!, $body: String!) {
+    UpdatePost(id: $id, title: $title, body: $body) {
       id
     }
   }
@@ -30,7 +29,7 @@ export const Success = ({ post }) => {
   })
 
   const onSave = (input, id) => {
-    updatePost({ variables: { id, input } })
+    updatePost({ variables: { id, title: input.title, body: input.body } })
   }
 
   return (

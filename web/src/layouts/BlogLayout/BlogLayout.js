@@ -15,6 +15,9 @@ const BlogLayout = ({ children }) => {
             <li>
               <Link to={routes.contact()}>Contact</Link>
             </li>
+            <li>
+              <Link to={routes.newPost()}>Create New Blog Post</Link>
+            </li>
           </ul>
         </nav>
       </header>
