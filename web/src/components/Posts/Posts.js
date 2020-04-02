@@ -48,7 +48,6 @@ const PostsList = ({ posts }) => {
             <th className="font-semibold text-left p-3">id</th>
             <th className="font-semibold text-left p-3">title</th>
             <th className="font-semibold text-left p-3">body</th>
-            <th className="font-semibold text-left p-3">createdAt</th>
             <th className="font-semibold text-left p-3">&nbsp;</th>
           </tr>
         </thead>
@@ -61,7 +60,7 @@ const PostsList = ({ posts }) => {
               <td className="p-3">{truncate(post.id)}</td>
               <td className="p-3">{truncate(post.title)}</td>
               <td className="p-3">{truncate(post.body)}</td>
-              <td className="p-3">{timeTag(post.createdAt)}</td>
+
               <td className="p-3 pr-4 text-right whitespace-no-wrap">
                 <nav>
                   <ul>
